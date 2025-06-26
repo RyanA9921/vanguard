@@ -69,7 +69,6 @@ header {
     display: flex;
     align-items: center;
     padding: 2rem 1.5rem 0.5rem;
-    flex-wrap: wrap;
     box-shadow: 0 6px 6px var(--blue);
     position: relative;
     z-index: 10;
@@ -93,8 +92,6 @@ h1 {
     font-size: 36px;
     cursor: pointer;
     color: var(--white);
-    margin-left: auto;
-    margin-top: 1rem;
     padding: 1rem 2rem;
     transition: max-height 0.5s ease;
 }
@@ -112,10 +109,6 @@ h1 {
   max-height: 1000px;
 }
 
-nav.menu {
-    width: 100%;
-}
-
 nav.menu ul {
     display: flex;
     gap: 2rem;
@@ -131,18 +124,49 @@ nav.menu ul li a {
     font-weight: 500;
 }
 
+#consultation-section h2 {
+    padding-top: 1rem;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#consultation-section p {
+    padding-top: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.blur-box {
+    margin: 0 1rem;
+    padding: 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: var(--white);
+    display: block;
+    text-decoration: none;
+}
+
+.blur-box a {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  padding: 1.15rem 1.75rem;
+  background-color: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
 html, body {
     min-width: 400px;
 }
 
-/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
  #consultation-section {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
@@ -153,7 +177,135 @@ html, body {
     overflow: hidden;
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
+#services {
+    padding-bottom: 3rem;
+}
+
+#services h2 {
+    padding: 1.5rem 1rem;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#services p {
+    line-height: 1.5;
+}
+
+.offer-box {
+    background-color: var(--blue);
+    margin: 1rem auto;
+    padding: 1.5rem 2rem 0.75rem 0.75rem;
+    border-radius: 8px;
+    color: var(--white);
+}
+
+.offer-box h3 {
+    font-size: 22px;
+    font-weight: 600;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+#results {
+    background-color: var(--blue);
+    color: var(--white);
+    padding-bottom: 2rem;
+}
+
+#results h2 {
+    padding: 1.5rem 1rem;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#results h3 {
+    padding: 1.5rem 1rem 2rem;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#results p {
+    line-height: 1.5;
+}
+
+table {
+    color: var(--white);
+    border-collapse: collapse;
+    width: 100%;
+    background-color: var(--black);
+}
+
+th, td {
+  border: 1px solid var(--charcoal);
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+.charcoal-row {
+    background-color: var(--charcoal);
+}
+
+#contact {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0 2rem;
+}
+
+#contact h2 {
+    padding: 1.5rem 1rem;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#contact p {
+    line-height: 1.5;
+    padding-bottom: 1.5rem;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="textarea"],
+form textarea {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 3px solid var(--blue);
+}
+
+textarea {
+    height: 100px;
+}
+
+form input[type="Submit"] {
+    color: var(--white);
+    background-color: #007BFF;
+    border-style: none;
+    width: 100%;
+    border-radius: 8px;
+    padding: 1rem 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+footer a {
+    color: var(--blue);
+}
+
  h1::before {
     content: "";
     position: absolute;
@@ -183,7 +335,7 @@ html, body {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height 0.4s ease;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -212,20 +364,61 @@ html, body {
 
 
 /* MEDIA QUERIES (MEDIUM) */ 
-
-    #results {
-        grid-template-columns: 1fr 1fr;
-    }
+@media (min-width: 768px) {
     .results-container {
-        flex-direction: row;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
     }
     .results-table {
-        width: 50%;
+        width: 100%;
     }
+    .results-table table tr td,
+    .results-table table tr th {
+        padding: 1.35rem 1rem;
+}
     .bar-chart {
-        width: 50%;
+        width: 100%;
     }
+    .hamburger {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        max-height: none;
+        padding: 0;
+        overflow: visible;
+        margin-left: 2rem;
+    }
+    nav.menu {
+        display: flex;
+        align-items: center;
+    }
+    nav.menu ul {
+        display: flex;
+        gap: 2rem;
+        justify-content: flex-end;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0 4rem 0 0;
+        font-size: 24px;
+    }
+    #menu-toggle {
+        display: none;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h1 {
+        padding-left: 5rem;
+    }
+    h1::before {
+        padding-left: 3rem;
+    }
+}
 
 
 /* MEDIA QUERIES (LARGE) */
