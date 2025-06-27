@@ -347,7 +347,7 @@ form input[type="Submit"] {
     font-weight: bold;
     font-size: 18px;
     transition: 0.3s ease;
-    margin: 0 auto;
+    margin: 1rem auto;
     display: block;
 }
 
@@ -442,7 +442,7 @@ footer a {
 
 
 /* MEDIA QUERIES (MEDIUM) */ 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
     .results-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
